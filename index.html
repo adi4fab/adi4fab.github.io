@@ -525,7 +525,7 @@
             padding: 28px 0;
             position: relative;
             transition: background 0.3s ease;
-            align-items: start;
+            align-items: first baseline;
         }
 
         .timeline-item:first-child {
@@ -542,7 +542,6 @@
 
         .timeline-meta {
             position: relative;
-            padding-top: 2px;
         }
 
         .timeline-date {
@@ -1403,7 +1402,7 @@
     // All icons use Simple Icons CDN (colored SVGs) for reliable grayscale→color hover
     const SI = "https://cdn.simpleicons.org";
     const tools = [
-        { name: "AWS", icon: `${SI}/amazonwebservices/FF9900`, color: "#FF9900" },
+        { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", color: "#FF9900" },
         { name: "Kubernetes", icon: `${SI}/kubernetes/326CE5`, color: "#326CE5" },
         { name: "Docker", icon: `${SI}/docker/2496ED`, color: "#2496ED" },
         { name: "Terraform", icon: `${SI}/terraform/7B42BC`, color: "#7B42BC" },
