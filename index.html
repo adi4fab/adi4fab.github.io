@@ -64,8 +64,8 @@
             left: 0;
             right: 0;
             z-index: 100;
-            padding: 0 64px;
-            height: 64px;
+            padding: 0 80px;
+            height: 72px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -83,7 +83,7 @@
 
         .nav-logo {
             font-weight: 700;
-            font-size: 18px;
+            font-size: 22px;
             letter-spacing: -0.5px;
         }
 
@@ -94,12 +94,12 @@
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
             list-style: none;
         }
 
         .nav-links a {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
             color: var(--text-secondary);
             letter-spacing: 0.5px;
@@ -140,23 +140,23 @@
            LAYOUT — 8px vertical rhythm grid
            ═══════════════════════════════════════════ */
         .container {
-            max-width: 1080px;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 0 64px;
+            padding: 0 80px;
         }
 
         section {
-            padding: 80px 0;
+            padding: 120px 0;
         }
 
         .section-label {
             font-family: var(--font-mono);
-            font-size: 32px;
+            font-size: clamp(40px, 5vw, 64px);
             font-weight: 700;
             color: var(--text-primary);
-            letter-spacing: -0.5px;
+            letter-spacing: -2px;
             text-transform: uppercase;
-            margin-bottom: 40px;
+            margin-bottom: 56px;
             display: block;
         }
 
@@ -167,7 +167,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 64px;
+            padding-top: 72px;
             position: relative;
             overflow: hidden;
         }
@@ -187,13 +187,13 @@
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
+            gap: 10px;
+            padding: 8px 18px;
             border: 1px solid var(--border);
             border-radius: 100px;
-            font-size: 13px;
+            font-size: 15px;
             color: var(--text-secondary);
-            margin-bottom: 32px;
+            margin-bottom: 40px;
             background: var(--bg-elevated);
         }
 
@@ -210,12 +210,13 @@
             50% { opacity: 0.4; }
         }
 
+
         .hero-name {
-            font-size: clamp(48px, 8vw, 80px);
+            font-size: clamp(72px, 12vw, 180px);
             font-weight: 800;
-            letter-spacing: -3px;
-            line-height: 1;
-            margin-bottom: 16px;
+            letter-spacing: -6px;
+            line-height: 0.9;
+            margin-bottom: 28px;
         }
 
         /* Mask reveal — each letter slides up from behind a clip */
@@ -234,32 +235,32 @@
         }
 
         .hero-title {
-            font-size: clamp(20px, 3vw, 28px);
+            font-size: clamp(24px, 3.5vw, 42px);
             font-weight: 300;
             color: var(--text-secondary);
             letter-spacing: -0.5px;
-            margin-bottom: 24px;
-        }
-
-        .hero-description {
-            font-size: 16px;
-            color: var(--text-secondary);
-            max-width: 560px;
-            line-height: 1.7;
             margin-bottom: 32px;
         }
 
+        .hero-description {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 800px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
         .hero-rotating {
-            margin-bottom: 36px;
-            height: clamp(50px, 8vw, 80px);
+            margin-bottom: 48px;
+            height: clamp(60px, 10vw, 120px);
             overflow: hidden;
             position: relative;
         }
 
         .hero-rotating-text {
-            font-size: clamp(40px, 6vw, 64px);
+            font-size: clamp(48px, 8vw, 100px);
             font-weight: 800;
-            letter-spacing: -2px;
+            letter-spacing: -3px;
             line-height: 1.1;
             position: absolute;
             white-space: nowrap;
@@ -295,13 +296,13 @@
         .btn-primary {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 12px 28px;
+            gap: 12px;
+            padding: 18px 40px;
             background: var(--text-primary);
             color: var(--bg);
-            font-size: 14px;
+            font-size: 17px;
             font-weight: 600;
-            border-radius: 8px;
+            border-radius: 12px;
             border: none;
             cursor: pointer;
             transition: transform 0.2s var(--ease-out), box-shadow 0.2s ease;
@@ -315,13 +316,13 @@
         .btn-secondary {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 12px 28px;
+            gap: 12px;
+            padding: 18px 40px;
             background: transparent;
             color: var(--text-secondary);
-            font-size: 14px;
+            font-size: 17px;
             font-weight: 500;
-            border-radius: 8px;
+            border-radius: 12px;
             border: 1px solid var(--border);
             cursor: pointer;
             transition: border-color 0.2s ease, color 0.2s ease;
@@ -338,95 +339,149 @@
         #about {
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 56px;
-            align-items: start;
+        .about-text {
+            max-width: 1000px;
+            margin-bottom: 64px;
         }
 
         .about-text p {
-            font-size: 16px;
+            font-size: 20px;
             color: var(--text-secondary);
             line-height: 1.8;
-            margin-bottom: 20px;
+            margin-bottom: 28px;
         }
 
-        .about-highlights {
+        /* ── Card Carousel ── */
+        .carousel-track-wrapper {
+            overflow-x: hidden;
+            overflow-y: visible;
+            margin-top: 40px;
+            padding: 12px 0;
+            /* Break out of container to go full-width */
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            padding-left: calc(50vw - 50%);
+        }
+
+        .carousel-track {
             display: flex;
-            flex-direction: column;
             gap: 20px;
+            width: max-content;
         }
 
         .highlight-card {
-            padding: 24px;
+            flex: 0 0 360px;
+            min-height: 320px;
+            padding: 40px 36px;
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 20px;
             background: var(--bg-card);
-            transition: border-color 0.4s ease, transform 0.3s var(--ease-out), box-shadow 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.4s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            user-select: none;
         }
 
+        /* Accent glow per card */
         .highlight-card::before {
             content: '';
             position: absolute;
-            width: 250px;
-            height: 250px;
+            top: -40%;
+            right: -30%;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-            top: var(--mouse-y, -150px);
-            left: var(--mouse-x, -150px);
-            transform: translate(-50%, -50%);
+            background: var(--card-accent, rgba(125, 211, 252, 0.08));
+            filter: blur(50px);
             pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
+            opacity: 0.6;
         }
 
         .highlight-card:hover::before {
             opacity: 1;
         }
 
-        .highlight-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 12px;
-            padding: 1px;
-            background: radial-gradient(
-                300px circle at var(--mouse-x, -150px) var(--mouse-y, -150px),
-                rgba(255,255,255,0.15),
-                transparent 60%
-            );
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .highlight-card:hover::after {
-            opacity: 1;
-        }
-
         .highlight-card:hover {
-            border-color: transparent;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--card-accent-border, rgba(125, 211, 252, 0.2));
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
         }
 
+        /* Color variants */
+        .highlight-card.accent-blue {
+            --card-accent: rgba(125, 211, 252, 0.1);
+            --card-accent-border: rgba(125, 211, 252, 0.25);
+            --card-accent-solid: #7dd3fc;
+        }
+        .highlight-card.accent-green {
+            --card-accent: rgba(134, 239, 172, 0.1);
+            --card-accent-border: rgba(134, 239, 172, 0.25);
+            --card-accent-solid: #86efac;
+        }
+        .highlight-card.accent-purple {
+            --card-accent: rgba(196, 181, 253, 0.1);
+            --card-accent-border: rgba(196, 181, 253, 0.25);
+            --card-accent-solid: #c4b5fd;
+        }
+        .highlight-card.accent-amber {
+            --card-accent: rgba(252, 211, 77, 0.1);
+            --card-accent-border: rgba(252, 211, 77, 0.25);
+            --card-accent-solid: #fcd34d;
+        }
+
+        .highlight-card .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover .card-icon {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--card-accent-border, rgba(255,255,255,0.1));
+        }
+
+        .highlight-card .card-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--card-accent-solid, var(--text-secondary));
+            stroke-width: 1.5;
+            fill: none;
+        }
 
         .highlight-card .value {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 4px;
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1;
+            margin-bottom: 8px;
+            color: var(--card-accent-solid, var(--text-primary));
         }
 
         .highlight-card .label {
-            font-size: 13px;
-            color: var(--text-tertiary);
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .highlight-card .card-num {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--card-accent-solid, var(--text-tertiary));
+            opacity: 0.5;
         }
 
         /* ═══════════════════════════════════════════
@@ -437,8 +492,8 @@
 
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 16px;
         }
 
         .tool-card {
@@ -446,8 +501,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            padding: 24px 16px;
+            gap: 14px;
+            padding: 28px 18px;
             border: 1px solid var(--border);
             border-radius: 12px;
             background: var(--bg-card);
@@ -477,8 +532,8 @@
         }
 
         .tool-card img {
-            width: 36px;
-            height: 36px;
+            width: 42px;
+            height: 42px;
             object-fit: contain;
             filter: grayscale(100%) brightness(0.6);
             transition: filter 0.4s var(--ease-out), transform 0.3s var(--ease-spring);
@@ -492,7 +547,7 @@
         }
 
         .tool-card .tool-name {
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 500;
             color: var(--text-tertiary);
             text-align: center;
@@ -520,9 +575,9 @@
 
         .timeline-item {
             display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 48px;
-            padding: 28px 0;
+            grid-template-columns: 280px 1fr;
+            gap: 72px;
+            padding: 44px 0;
             position: relative;
             transition: background 0.3s ease;
             align-items: first baseline;
@@ -546,48 +601,48 @@
 
         .timeline-date {
             font-family: var(--font-mono);
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 700;
             color: #f5f5f5;
             text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .timeline-company {
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 800;
             color: #ffffff;
             text-shadow: 2px 3px 8px rgba(0,0,0,0.8);
-            margin-bottom: 1px;
+            margin-bottom: 3px;
         }
 
         .timeline-location {
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 700;
             color: #f5f5f5;
             text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
         }
 
         .timeline-content h3 {
-            font-size: 20px;
+            font-size: 28px;
             font-weight: 600;
             letter-spacing: -0.3px;
             line-height: 1;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
         }
 
         .timeline-content ul {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .timeline-content li {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--text-secondary);
-            line-height: 1.6;
-            padding-left: 16px;
+            line-height: 1.7;
+            padding-left: 18px;
             position: relative;
         }
 
@@ -611,7 +666,7 @@
 
         .timeline-tag {
             font-family: var(--font-mono);
-            font-size: 11px;
+            font-size: 12px;
             color: var(--text-tertiary);
             padding: 4px 10px;
             border: 1px solid var(--border);
@@ -627,15 +682,15 @@
 
         .certs-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 18px;
         }
 
         .cert-card {
             display: flex;
             align-items: center;
-            gap: 16px;
-            padding: 20px 24px;
+            gap: 18px;
+            padding: 24px 28px;
             border: 1px solid var(--border);
             border-radius: 12px;
             background: var(--bg-card);
@@ -677,9 +732,9 @@
         }
 
         .cert-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
             background: var(--bg-elevated);
             border: 1px solid var(--border);
             display: flex;
@@ -690,13 +745,13 @@
         }
 
         .cert-info h4 {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
 
         .cert-info p {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-tertiary);
         }
 
@@ -713,7 +768,7 @@
         }
 
         .edu-card {
-            padding: 32px;
+            padding: 40px;
             border: 1px solid var(--border);
             border-radius: 12px;
             background: var(--bg-card);
@@ -726,20 +781,20 @@
         }
 
         .edu-card h4 {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .edu-card .edu-school {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--text-secondary);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .edu-card .edu-year {
             font-family: var(--font-mono);
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-tertiary);
         }
 
@@ -751,23 +806,23 @@
 
         .contact-layout {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 56px;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 72px;
             align-items: start;
         }
 
         .contact-info h3 {
-            font-size: 28px;
+            font-size: 36px;
             font-weight: 700;
             letter-spacing: -0.5px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .contact-info p {
-            font-size: 15px;
+            font-size: 17px;
             color: var(--text-secondary);
             line-height: 1.7;
-            margin-bottom: 32px;
+            margin-bottom: 36px;
         }
 
         .contact-links {
@@ -779,8 +834,8 @@
         .contact-link {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 14px;
+            gap: 14px;
+            font-size: 16px;
             color: var(--text-secondary);
             transition: color 0.2s ease;
         }
@@ -809,7 +864,7 @@
         }
 
         .form-group label {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 500;
             color: var(--text-tertiary);
             text-transform: uppercase;
@@ -818,13 +873,13 @@
 
         .form-group input,
         .form-group textarea {
-            padding: 12px 16px;
+            padding: 14px 18px;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 10px;
             color: var(--text-primary);
             font-family: var(--font-sans);
-            font-size: 14px;
+            font-size: 16px;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
             outline: none;
         }
@@ -847,6 +902,11 @@
 
         .form-submit {
             align-self: flex-start;
+        }
+
+        .form-submit .btn-primary {
+            padding: 14px 28px;
+            font-size: 15px;
         }
 
         /* ═══════════════════════════════════════════
@@ -884,6 +944,37 @@
         .footer-socials svg {
             width: 18px;
             height: 18px;
+        }
+
+        /* ═══════════════════════════════════════════
+           CUSTOM CURSOR FOLLOWER
+           ═══════════════════════════════════════════ */
+        .cursor-follower {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.85);
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out), opacity 0.3s ease;
+            will-change: left, top;
+            opacity: 0;
+        }
+
+        .cursor-follower.visible {
+            opacity: 1;
+        }
+
+        .cursor-follower.hovering {
+            width: 36px;
+            height: 36px;
+        }
+
+        @media (max-width: 768px) {
+            .cursor-follower { display: none; }
         }
 
         /* ═══════════════════════════════════════════
@@ -955,8 +1046,9 @@
            ═══════════════════════════════════════════ */
         @media (max-width: 768px) {
             .container { padding: 0 24px; }
-            nav { padding: 0 24px; }
-            section { padding: 56px 0; }
+            nav { padding: 0 24px; height: 64px; }
+            section { padding: 64px 0; }
+            .section-label { font-size: 32px; letter-spacing: -1px; margin-bottom: 32px; }
             .tools-grid { grid-template-columns: repeat(4, 1fr); }
             .certs-grid { grid-template-columns: 1fr; }
 
@@ -975,21 +1067,41 @@
             }
             .nav-menu-btn { display: block; }
 
-            .hero-rotating { height: 60px; }
+            .hero-badge { font-size: 13px; padding: 6px 14px; }
+            .hero-name { letter-spacing: -3px; }
+            .hero-title { font-size: 20px; }
+            .hero-description { font-size: 16px; }
+            .hero-rotating { height: 55px; }
+            .hero-rotating-text { font-size: 40px; }
             .hero-ctas { flex-direction: column; align-items: flex-start; }
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .btn-primary, .btn-secondary { padding: 14px 28px; font-size: 15px; }
+            .about-text p { font-size: 16px; }
+            .highlight-card { flex: 0 0 240px; min-height: 260px; padding: 28px 24px; }
+            .highlight-card .value { font-size: 32px; }
             .tools-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 10px; }
             .tool-card { padding: 16px 10px; }
-            .timeline-item { grid-template-columns: 1fr; gap: 12px; }
+            .tool-card img { width: 32px; height: 32px; }
+            .tool-card .tool-name { font-size: 11px; }
+            .timeline-item { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+            .timeline-content h3 { font-size: 20px; }
+            .timeline-content li { font-size: 14px; }
             .certs-grid { grid-template-columns: 1fr; }
+            .cert-card { padding: 18px 20px; }
+            .cert-info h4 { font-size: 14px; }
             .edu-grid { grid-template-columns: 1fr; }
+            .edu-card { padding: 28px; }
+            .edu-card h4 { font-size: 16px; }
             .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+            .contact-info h3 { font-size: 24px; }
+            .contact-info p { font-size: 15px; }
             .footer-content { flex-direction: column; gap: 16px; text-align: center; }
-            .section-title { font-size: 28px; }
         }
     </style>
 </head>
 <body>
+    <!-- ═══════════════════ CURSOR FOLLOWER ═══════════════════ -->
+    <div class="cursor-follower" id="cursorFollower"></div>
+
     <!-- ═══════════════════ PAGE TRANSITION ═══════════════════ -->
     <div class="page-transition" id="pageTransition">
         <div class="curtain-col"></div>
@@ -1059,46 +1171,112 @@
         </div>
     </section>
 
+
     <!-- ═══════════════════ ABOUT ═══════════════════ -->
     <section id="about" class="section-reveal">
         <div class="container">
             <div class="section-label reveal">About</div>
-            <div class="about-grid">
-                <div class="about-text reveal">
-                    <p>
-                        I'm a Senior Platform / DevOps Engineer specializing in designing, implementing,
-                        and operating production-grade AWS cloud infrastructure and Kubernetes platforms.
-                        My work spans fintech startups, global banking institutions, and enterprise
-                        tech companies.
-                    </p>
-                    <p>
-                        I focus on building secure, highly available, multi-environment AWS platforms
-                        using Infrastructure as Code, GitOps delivery, and modern observability practices.
-                        I believe great infrastructure should be invisible — reliable, automated, and
-                        enabling teams to ship with confidence.
-                    </p>
-                    <p>
-                        With an M.Tech from BITS Pilani and certifications including CKA, CKAD, and
-                        AWS Solutions Architect, I bring both deep technical expertise and architectural
-                        thinking to every platform I build.
-                    </p>
-                </div>
-                <div class="about-highlights reveal">
-                    <div class="highlight-card">
-                        <div class="value">30–40%</div>
-                        <div class="label">Reduction in deployment failures through GitOps adoption</div>
+            <div class="about-text reveal">
+                <p>
+                    I'm a Senior Platform / DevOps Engineer specializing in designing, implementing,
+                    and operating production-grade AWS cloud infrastructure and Kubernetes platforms.
+                    My work spans fintech startups, global banking institutions, and enterprise
+                    tech companies.
+                </p>
+                <p>
+                    I focus on building secure, highly available, multi-environment AWS platforms
+                    using Infrastructure as Code, GitOps delivery, and modern observability practices.
+                    I believe great infrastructure should be invisible — reliable, automated, and
+                    enabling teams to ship with confidence.
+                </p>
+                <p>
+                    With an M.Tech from BITS Pilani and certifications including CKA, CKAD, and
+                    AWS Solutions Architect, I bring both deep technical expertise and architectural
+                    thinking to every platform I build.
+                </p>
+            </div>
+
+            <div class="carousel-track-wrapper reveal">
+                <div class="carousel-track" id="aboutCarousel">
+                    <div class="highlight-card accent-blue">
+                        <span class="card-num">01</span>
+                        <div>
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                            </div>
+                            <div class="value">30–40%</div>
+                            <div class="label">Fewer deployment failures through GitOps & Argo CD pipelines</div>
+                        </div>
                     </div>
-                    <div class="highlight-card">
-                        <div class="value">25–35%</div>
-                        <div class="label">MTTR improvement via observability integration</div>
+                    <div class="highlight-card accent-green">
+                        <span class="card-num">02</span>
+                        <div>
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            <div class="value">25–35%</div>
+                            <div class="label">Faster incident resolution with full-stack observability</div>
+                        </div>
                     </div>
-                    <div class="highlight-card">
-                        <div class="value">25%</div>
-                        <div class="label">Cloud infrastructure cost reduction</div>
+                    <div class="highlight-card accent-purple">
+                        <span class="card-num">03</span>
+                        <div>
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </div>
+                            <div class="value">~25%</div>
+                            <div class="label">Cloud spend slashed through right-sizing & spot automation</div>
+                        </div>
                     </div>
-                    <div class="highlight-card">
-                        <div class="value">Multi-Env</div>
-                        <div class="label">Secure, HA AWS platforms (Prod / Staging / Dev)</div>
+                    <div class="highlight-card accent-amber">
+                        <span class="card-num">04</span>
+                        <div>
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <div class="value">Zero</div>
+                            <div class="label">Downtime deployments across production Kubernetes workloads</div>
+                        </div>
+                    </div>
+                    <div class="highlight-card accent-blue">
+                        <span class="card-num">05</span>
+                        <div>
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                            </div>
+                            <div class="value">99.9%</div>
+                            <div class="label">Platform uptime maintained across multi-region HA setups</div>
+                        </div>
+                    </div>
+                    <div class="highlight-card accent-green">
+                        <span class="card-num">06</span>
+                        <div>
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                            </div>
+                            <div class="value">10x</div>
+                            <div class="label">Faster release cycles with automated CI/CD pipelines</div>
+                        </div>
+                    </div>
+                    <div class="highlight-card accent-purple">
+                        <span class="card-num">07</span>
+                        <div>
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                            </div>
+                            <div class="value">50%+</div>
+                            <div class="label">Reduction in manual ops through Infrastructure as Code</div>
+                        </div>
+                    </div>
+                    <div class="highlight-card accent-amber">
+                        <span class="card-num">08</span>
+                        <div>
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="value">100%</div>
+                            <div class="label">Security compliance across regulated fintech & banking infra</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1574,6 +1752,57 @@
     // Repeat every 60 seconds
     setInterval(revealName, 60000);
 
+
+
+    // ── About Card Carousel (Infinite Auto-Scroll) ──
+    (function() {
+        const track = document.getElementById('aboutCarousel');
+        if (!track) return;
+
+        // Duplicate cards for seamless infinite loop
+        const cards = track.innerHTML;
+        track.innerHTML = cards + cards;
+
+        // Calculate total width of one set
+        const allCards = track.querySelectorAll('.highlight-card');
+        const gap = 20;
+        const oneSetCount = allCards.length / 2;
+        let oneSetWidth = 0;
+        for (let i = 0; i < oneSetCount; i++) {
+            oneSetWidth += allCards[i].offsetWidth + gap;
+        }
+
+        // CSS animation for ultra-smooth scroll
+        track.style.animation = `carouselScroll ${oneSetWidth / 40}s linear infinite`;
+
+        // Create the keyframe dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes carouselScroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-${oneSetWidth}px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Pause on hover
+        track.addEventListener('mouseenter', () => {
+            track.style.animationPlayState = 'paused';
+        });
+        track.addEventListener('mouseleave', () => {
+            track.style.animationPlayState = 'running';
+        });
+
+        // Mouse glow on cards
+        track.querySelectorAll('.highlight-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+                card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+            });
+        });
+    })();
+
     // ── Hero Rotating Text ──
     const rotatingTexts = document.querySelectorAll('.hero-rotating-text');
     let rotateIndex = 0;
@@ -1634,6 +1863,44 @@
             }, 3000);
         });
     });
+
+    // ── Custom Cursor Follower ──
+    (function() {
+        const follower = document.getElementById('cursorFollower');
+        if (!follower || window.matchMedia('(max-width: 768px)').matches) return;
+
+        let mouseX = 0, mouseY = 0;
+        let followerX = 0, followerY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            if (!follower.classList.contains('visible')) {
+                follower.classList.add('visible');
+            }
+        });
+
+        document.addEventListener('mouseleave', () => {
+            follower.classList.remove('visible');
+        });
+
+        // Grow on hoverable elements
+        const hoverTargets = 'a, button, .btn-primary, .btn-secondary, .highlight-card, .tool-card, .cert-card, .edu-card, input, textarea';
+        document.querySelectorAll(hoverTargets).forEach(el => {
+            el.addEventListener('mouseenter', () => follower.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => follower.classList.remove('hovering'));
+        });
+
+        function animate() {
+            // Smooth lerp for that trailing effect
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
+            follower.style.left = followerX + 'px';
+            follower.style.top = followerY + 'px';
+            requestAnimationFrame(animate);
+        }
+        animate();
+    })();
     </script>
 </body>
 </html>
