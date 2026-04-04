@@ -1355,7 +1355,7 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-form reveal" action="https://formspree.io/f/your-form-id" method="POST">
+                <form class="contact-form reveal" action="https://formspree.io/f/xaqlpkar" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -1599,20 +1599,40 @@
     });
 
 
-    // ── Contact Form Handler (basic) ──
+    // ── Contact Form Handler ──
     document.querySelector('.contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        const btn = this.querySelector('button[type="submit"]');
+        const form = this;
+        const btn = form.querySelector('button[type="submit"]');
         const originalHTML = btn.innerHTML;
-        btn.innerHTML = 'Sent! &#10003;';
-        btn.style.opacity = '0.7';
+        btn.innerHTML = 'Sending...';
         btn.disabled = true;
-        setTimeout(() => {
-            btn.innerHTML = originalHTML;
-            btn.style.opacity = '1';
-            btn.disabled = false;
-            this.reset();
-        }, 3000);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                btn.innerHTML = 'Sent! &#10003;';
+                btn.style.opacity = '0.7';
+                form.reset();
+            } else {
+                btn.innerHTML = 'Error — try again';
+            }
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.opacity = '1';
+                btn.disabled = false;
+            }, 3000);
+        }).catch(() => {
+            btn.innerHTML = 'Error — try again';
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.opacity = '1';
+                btn.disabled = false;
+            }, 3000);
+        });
     });
     </script>
 </body>
