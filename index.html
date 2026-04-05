@@ -952,6 +952,65 @@
         }
 
         /* ═══════════════════════════════════════════
+           INTRO LOADER
+           ═══════════════════════════════════════════ */
+        .intro-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro-loader.revealing .intro-final {
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+
+        .intro-word {
+            font-family: var(--font-sans);
+            font-size: clamp(42px, 8vw, 96px);
+            font-weight: 700;
+            letter-spacing: -2px;
+            color: #f5f5f5;
+            position: absolute;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .intro-word.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .intro-word.exit {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .intro-final {
+            font-family: var(--font-mono);
+            font-size: clamp(28px, 5vw, 56px);
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .intro-final.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ═══════════════════════════════════════════
            CUSTOM CURSOR FOLLOWER
            ═══════════════════════════════════════════ */
         .cursor-follower {
@@ -1104,6 +1163,26 @@
     </style>
 </head>
 <body>
+    <!-- ═══════════════════ INTRO LOADER ═══════════════════ -->
+    <div class="intro-loader" id="introLoader">
+        <span class="intro-word" data-lang>Hello</span>
+        <span class="intro-word" data-lang>Hola</span>
+        <span class="intro-word" data-lang>Bonjour</span>
+        <span class="intro-word" data-lang>Ciao</span>
+        <span class="intro-word" data-lang>Hallo</span>
+        <span class="intro-word" data-lang>Olá</span>
+        <span class="intro-word" data-lang>Привет</span>
+        <span class="intro-word" data-lang>こんにちは</span>
+        <span class="intro-word" data-lang>안녕하세요</span>
+        <span class="intro-word" data-lang>你好</span>
+        <span class="intro-word" data-lang>مرحبا</span>
+        <span class="intro-word" data-lang>नमस्ते</span>
+        <span class="intro-word" data-lang>สวัสดี</span>
+        <span class="intro-word" data-lang>Merhaba</span>
+        <span class="intro-word" data-lang>Xin chào</span>
+        <span class="intro-final" id="introFinal">Let's start building</span>
+    </div>
+
     <!-- ═══════════════════ CURSOR FOLLOWER ═══════════════════ -->
     <div class="cursor-follower" id="cursorFollower"></div>
 
@@ -1581,6 +1660,75 @@
 
     <!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
     <script>
+    // ── Force scroll to top on reload ──
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // ── Intro Loader ──
+    (function() {
+        const loader = document.getElementById('introLoader');
+        const words = loader.querySelectorAll('.intro-word');
+        const final = document.getElementById('introFinal');
+        let i = 0;
+        const speed = 130; // ms per word — faster to fit ~3s total
+
+        // Prevent scroll during intro
+        document.body.style.overflow = 'hidden';
+
+        // Start first word
+        words[0].classList.add('active');
+
+        const interval = setInterval(() => {
+            words[i].classList.remove('active');
+            words[i].classList.add('exit');
+            i++;
+
+            if (i < words.length) {
+                words[i].classList.add('active');
+            } else {
+                clearInterval(interval);
+                setTimeout(() => {
+                    final.classList.add('active');
+                    // After showing final text, white circle expands from center
+                    setTimeout(() => {
+                        loader.classList.add('revealing');
+                        // White circle expanding outward using mask
+                        const diagonal = Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2);
+                        const maxR = diagonal / 2;
+                        const duration = 700; // ms
+                        const start = performance.now();
+                        // Transparent — site visible directly behind loader
+                        const ring = { remove() {} };
+
+                        // Force all scroll animations visible before reveal starts
+                        document.querySelectorAll('.section-reveal').forEach(s => s.classList.add('in-view'));
+                        document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('visible'));
+
+                        function expand(now) {
+                            const t = Math.min((now - start) / duration, 1);
+                            const ease = 1 - Math.pow(1 - t, 3);
+                            const r = maxR - (ease * maxR);
+                            const mask = `radial-gradient(circle ${r}px at 50% 50%, #000 ${r}px, transparent ${r + 2}px)`;
+                            loader.style.maskImage = mask;
+                            loader.style.webkitMaskImage = mask;
+
+                            if (t < 1) {
+                                requestAnimationFrame(expand);
+                            } else {
+                                loader.remove();
+                                ring.remove();
+                                document.body.style.overflow = '';
+                            }
+                        }
+                        requestAnimationFrame(expand);
+                    }, 700);
+                }, 80);
+            }
+        }, speed);
+    })();
+
     // ── Tool Icons Data (using Simple Icons / devicon CDN) ──
     // All icons use Simple Icons CDN (colored SVGs) for reliable grayscale→color hover
     const SI = "https://cdn.simpleicons.org";
@@ -1752,10 +1900,16 @@
         }, 200);
     }
 
-    // On page load — reveal immediately
-    revealName();
-    // Repeat every 60 seconds
-    setInterval(revealName, 60000);
+    // Delay name reveal until intro loader is done
+    function startNameReveal() {
+        if (document.getElementById('introLoader')) {
+            requestAnimationFrame(startNameReveal);
+        } else {
+            revealName();
+            setInterval(revealName, 60000);
+        }
+    }
+    startNameReveal();
 
 
 
