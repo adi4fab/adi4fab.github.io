@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya P R — DevOps Architect & Cloud Infrastructure Engineer</title>
+    <meta name="description" content="Freelance DevOps and platform engineering. I build production AWS and Kubernetes platforms, cut cloud spend, and set up GitOps delivery - handed over as Terraform you own.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adi4fab.github.io/">
+    <meta property="og:title" content="Aditya P R - AWS &amp; Kubernetes Platform Consultant">
+    <meta property="og:description" content="Production AWS and Kubernetes platforms, cloud cost reduction, and GitOps delivery. Delivered as Terraform you own. Available for contract work.">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://adi4fab.github.io/">
+    <title>Aditya P R — AWS & Kubernetes Platform Consultant</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1141,6 +1148,47 @@
             .contact-info p { font-size: 15px; }
             .footer-content { flex-direction: column; gap: 16px; text-align: center; }
         }
+        /* ═══════════════ SERVICES ═══════════════ */
+        .services-lead { max-width: 780px; font-size: 19px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 56px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; }
+        .service-card { padding: 40px 36px; border: 1px solid var(--border); border-radius: 20px;
+            background: var(--bg-card); position: relative; overflow: hidden; display: flex; flex-direction: column;
+            transition: border-color .4s ease, transform .45s var(--ease-out), background .3s ease; }
+        .service-card:hover { border-color: var(--card-accent-border, var(--border-hover)); background: var(--bg-card-hover); transform: translateY(-4px); }
+        .service-num { position: absolute; top: 28px; right: 32px; font-family: var(--font-mono);
+            font-size: 13px; color: var(--text-tertiary); letter-spacing: 1px; }
+        .service-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            background: var(--card-accent, rgba(255,255,255,.06)); margin-bottom: 24px; }
+        .service-icon svg { width: 22px; height: 22px; fill: none; stroke: var(--card-accent-solid, var(--text-primary));
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .service-title { font-size: 22px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 12px; color: var(--text-primary); }
+        .service-desc { font-size: 15px; line-height: 1.65; color: var(--text-secondary); margin-bottom: 22px; }
+        .service-list { list-style: none; padding: 0; margin: 0 0 26px; }
+        .service-list li { font-size: 14px; color: var(--text-secondary); padding-left: 20px; position: relative; margin-bottom: 9px; line-height: 1.5; }
+        .service-list li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px;
+            border-radius: 50%; background: var(--card-accent-solid, var(--text-tertiary)); }
+        .service-proof { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);
+            font-family: var(--font-mono); font-size: 13px; color: var(--card-accent-solid, var(--text-secondary)); letter-spacing: .2px; }
+
+        /* ═══════════════ PROCESS ═══════════════ */
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .process-step { padding: 36px 32px; border: 1px solid var(--border); border-radius: 20px; background: var(--bg-card);
+            transition: border-color .3s ease, transform .2s var(--ease-out); }
+        .process-step:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+        .process-step .step-n { font-family: var(--font-mono); font-size: 13px; color: var(--text-tertiary); margin-bottom: 18px; display: block; }
+        .process-step h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; letter-spacing: -.3px; color: var(--text-primary); }
+        .process-step p { font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
+        .process-note { margin-top: 28px; font-size: 15px; color: var(--text-tertiary); font-family: var(--font-mono); }
+
+        .cred-lead { max-width: 820px; font-size: 19px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 48px; }
+        .cred-lead strong { color: var(--text-primary); font-weight: 600; }
+
+        @media (max-width: 768px) {
+            .service-card, .process-step { padding: 32px 26px; }
+            .services-grid, .process-grid { grid-template-columns: 1fr; }
+            .services-lead, .cred-lead { font-size: 17px; }
+        }
+
     </style>
 </head>
 <body>
@@ -1171,10 +1219,10 @@
     <nav id="navbar">
         <a href="#hero" class="nav-logo">APR<span>.</span></a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#about">About</a></li>
-            <li><a href="#tools">Tools</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">Results</a></li>
+            <li><a href="#process">How I Work</a></li>
+            <li><a href="#certifications">Credentials</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">
@@ -1189,14 +1237,14 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <span class="dot"></span>
-                    Available for opportunities
+                    Available for contract work
                 </div>
                 <h1 class="hero-name" id="heroName">ADITYA P R</h1>
-                <h2 class="hero-title">DevOps Architect & Cloud Infrastructure Engineer</h2>
+                <h2 class="hero-title">I build AWS & Kubernetes platforms that don’t wake you at 3am.</h2>
                 <p class="hero-description">
-                    Building production-grade cloud platforms and Kubernetes infrastructure
-                    for fintech & regulated environments. 9+ years turning complex infrastructure
-                    challenges into scalable, automated solutions.
+                    Freelance platform engineering for teams running on AWS. I design, build and hand over
+                    production infrastructure — private by default, fully automated, and delivered as
+                    Terraform you own outright. No lock-in, no black boxes.
                 </p>
                 <div class="hero-rotating" id="heroRotating">
                     <span class="hero-rotating-text active"><span class="num" style="--num-color: #7dd3fc;">Cloud</span> <span class="highlight">Platforms</span></span>
@@ -1218,37 +1266,115 @@
                 </div>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn-primary">
-                        Get in Touch
+                        Book a Call
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
-                    <a href="#experience" class="btn-secondary">View Experience</a>
+                    <a href="#services" class="btn-secondary">What I Build</a>
                 </div>
             </div>
         </div>
     </section>
 
 
-    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <!-- ═══════════════════ SERVICES ═══════════════════ -->
+    <section id="services" class="section-reveal">
+        <div class="container">
+            <div class="section-label reveal">Services</div>
+            <p class="services-lead reveal">
+                Six things teams usually bring me in for. Every engagement ends the same way:
+                working infrastructure, documented, handed over as code in your own repositories.
+            </p>
+            <div class="services-grid">
+                    <div class="service-card reveal accent-blue">
+                        <span class="service-num">01</span>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+                        <h3 class="service-title">Production EKS Platform</h3>
+                        <p class="service-desc">A multi-AZ Kubernetes platform on AWS built the way a platform team would run it — not a demo cluster.</p>
+                        <ul class="service-list">
+                            <li>Private subnets, IRSA, no public endpoints</li>
+                            <li>Karpenter autoscaling and consolidation</li>
+                            <li>GitOps delivery with Argo CD</li>
+                            <li>Multi-environment from day one</li>
+                        </ul>
+                        <div class="service-proof">→ 99.9% uptime · zero-downtime deploys</div>
+                    </div>
+                    <div class="service-card reveal accent-green">
+                        <span class="service-num">02</span>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                        <h3 class="service-title">Cloud Cost Reduction</h3>
+                        <p class="service-desc">Most AWS bills carry 20–40% waste. I find it, quantify it, then implement the fix.</p>
+                        <ul class="service-list">
+                            <li>Right-sizing and idle-resource cleanup</li>
+                            <li>Spot and Karpenter consolidation strategy</li>
+                            <li>Savings Plans and commitment planning</li>
+                            <li>Written findings with rupee/dollar impact</li>
+                        </ul>
+                        <div class="service-proof">→ ~25% cloud spend removed</div>
+                    </div>
+                    <div class="service-card reveal accent-purple">
+                        <span class="service-num">03</span>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
+                        <h3 class="service-title">CI/CD &amp; GitOps Delivery</h3>
+                        <p class="service-desc">Ship daily without holding your breath. Pipelines that fail safely and roll back on their own.</p>
+                        <ul class="service-list">
+                            <li>Argo CD GitOps pipelines</li>
+                            <li>Progressive delivery and automated rollback</li>
+                            <li>PR-gated infrastructure changes</li>
+                            <li>Pre-commit hooks and secret scanning</li>
+                        </ul>
+                        <div class="service-proof">→ 10x faster releases · 30–40% fewer failures</div>
+                    </div>
+                    <div class="service-card reveal accent-amber">
+                        <span class="service-num">04</span>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                        <h3 class="service-title">ClickOps → Infrastructure as Code</h3>
+                        <p class="service-desc">Your AWS estate imported into Terraform or Terragrunt, so the console stops being the source of truth.</p>
+                        <ul class="service-list">
+                            <li>Import existing resources without downtime</li>
+                            <li>Reusable modules, pinned and versioned</li>
+                            <li>Drift detection in CI</li>
+                            <li>Handed over as code you fully own</li>
+                        </ul>
+                        <div class="service-proof">→ 50%+ less manual ops</div>
+                    </div>
+                    <div class="service-card reveal accent-blue">
+                        <span class="service-num">05</span>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                        <h3 class="service-title">Observability &amp; Incident Readiness</h3>
+                        <p class="service-desc">Know something is wrong before your customers tell you — and know where to look.</p>
+                        <ul class="service-list">
+                            <li>Prometheus and Grafana, SLO-based</li>
+                            <li>Alerting that pages on symptoms, not noise</li>
+                            <li>Runbooks your on-call can actually follow</li>
+                            <li>Post-incident review process</li>
+                        </ul>
+                        <div class="service-proof">→ 25–35% faster incident resolution</div>
+                    </div>
+                    <div class="service-card reveal accent-green">
+                        <span class="service-num">06</span>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <h3 class="service-title">Security &amp; Compliance Hardening</h3>
+                        <p class="service-desc">Built for regulated environments — fintech and banking, where an audit is not hypothetical.</p>
+                        <ul class="service-list">
+                            <li>Least-privilege IAM and IRSA</li>
+                            <li>Private-by-default networking</li>
+                            <li>Secrets in Vault / AWS Secrets Manager</li>
+                            <li>RBAC, NetworkPolicy and TLS everywhere</li>
+                        </ul>
+                        <div class="service-proof">→ 100% compliance across regulated infra</div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ RESULTS ═══════════════════ -->
     <section id="about" class="section-reveal">
         <div class="container">
-            <div class="section-label reveal">About</div>
+            <div class="section-label reveal">Results</div>
             <div class="about-text reveal">
                 <p>
-                    I'm a Senior Platform / DevOps Engineer specializing in designing, implementing,
-                    and operating production-grade AWS cloud infrastructure and Kubernetes platforms.
-                    My work spans fintech startups, global banking institutions, and enterprise
-                    tech companies.
-                </p>
-                <p>
-                    I focus on building secure, highly available, multi-environment AWS platforms
-                    using Infrastructure as Code, GitOps delivery, and modern observability practices.
-                    I believe great infrastructure should be invisible — reliable, automated, and
-                    enabling teams to ship with confidence.
-                </p>
-                <p>
-                    With an M.Tech from BITS Pilani and certifications including CKA, CKAD, and
-                    AWS Solutions Architect, I bring both deep technical expertise and architectural
-                    thinking to every platform I build.
+                    Numbers from platforms I have shipped and run in production — across fintech
+                    startups, global banking institutions and enterprise tech.
                 </p>
             </div>
 
@@ -1342,7 +1468,7 @@
     <!-- ═══════════════════ TOOLS ═══════════════════ -->
     <section id="tools" class="section-reveal">
         <div class="container">
-            <div class="section-label reveal">Tools</div>
+            <div class="section-label reveal">Stack</div>
             <div class="tools-grid" id="toolsGrid">
                 <!-- Populated by JS -->
             </div>
@@ -1350,140 +1476,47 @@
     </section>
 
     <!-- ═══════════════════ EXPERIENCE ═══════════════════ -->
-    <section id="experience" class="section-reveal">
+    
+
+    <!-- ═══════════════════ CERTIFICATIONS ═══════════════════ -->
+    <!-- ═══════════════════ PROCESS ═══════════════════ -->
+    <section id="process" class="section-reveal">
         <div class="container">
-            <div class="section-label reveal">Experience</div>
-            <div class="timeline">
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-meta">
-                        <div class="timeline-date">Feb 2026 — Present</div>
-                        <div class="timeline-company">Simplilearn</div>
-                        <div class="timeline-location">India</div>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Lead DevOps Architect</h3>
-                        <ul>
-                            <li>Leading cloud infrastructure and DevOps strategy across multi-environment AWS platforms</li>
-                            <li>Driving Terraform, GitOps, and CI/CD best practices across engineering teams</li>
-                            <li>Architecting scalable Kubernetes platforms for high-availability ed-tech services</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span class="timeline-tag">AWS</span>
-                            <span class="timeline-tag">Kubernetes</span>
-                            <span class="timeline-tag">Terraform</span>
-                            <span class="timeline-tag">GitOps</span>
-                        </div>
-                    </div>
+            <div class="section-label reveal">How I Work</div>
+            <div class="process-grid">
+                <div class="process-step reveal">
+                    <span class="step-n">STEP 01</span>
+                    <h3>Discovery call</h3>
+                    <p>Thirty minutes. What is breaking, what it is costing you, and whether I am actually the right person for it.</p>
                 </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-meta">
-                        <div class="timeline-date">Jun 2023 — Oct 2025</div>
-                        <div class="timeline-company">Respondent</div>
-                        <div class="timeline-location">US (Remote)</div>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Senior Platform / DevOps Engineer</h3>
-                        <ul>
-                            <li>Owned end-to-end AWS cloud architecture and platform strategy</li>
-                            <li>Designed and operated highly available multi-environment EKS platforms</li>
-                            <li>Introduced GitOps delivery with Argo CD, reducing deployment failures by 30–40%</li>
-                            <li>Implemented observability using Datadog and New Relic, improving MTTR by 25–35%</li>
-                            <li>Implemented AWS security controls (Security Hub, GuardDuty, WAF, CloudTrail)</li>
-                            <li>Reduced CI/CD costs using self-hosted GitHub Actions runners on Spot instances</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span class="timeline-tag">EKS</span>
-                            <span class="timeline-tag">Argo CD</span>
-                            <span class="timeline-tag">Terraform</span>
-                            <span class="timeline-tag">Datadog</span>
-                            <span class="timeline-tag">GitHub Actions</span>
-                        </div>
-                    </div>
+                <div class="process-step reveal">
+                    <span class="step-n">STEP 02</span>
+                    <h3>Assessment</h3>
+                    <p>I audit the estate and give you a written findings document with priorities and effort estimates. Yours to keep either way.</p>
                 </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-meta">
-                        <div class="timeline-date">Mar 2022 — Mar 2023</div>
-                        <div class="timeline-company">Jeeves Inc</div>
-                        <div class="timeline-location">US (Remote)</div>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Senior DevOps Engineer</h3>
-                        <ul>
-                            <li>Managed production Kubernetes workloads on Amazon EKS</li>
-                            <li>Migrated 5–10 legacy services into containerized cloud-native environments</li>
-                            <li>Implemented Datadog observability stack for full application monitoring</li>
-                            <li>Reduced AWS cloud spend by approximately 25% through right-sizing and automation</li>
-                            <li>Participated in on-call rotations and production incident response</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span class="timeline-tag">EKS</span>
-                            <span class="timeline-tag">Datadog</span>
-                            <span class="timeline-tag">Terraform</span>
-                            <span class="timeline-tag">Ansible</span>
-                            <span class="timeline-tag">FinOps</span>
-                        </div>
-                    </div>
+                <div class="process-step reveal">
+                    <span class="step-n">STEP 03</span>
+                    <h3>Build</h3>
+                    <p>Delivered as reviewed, tested Infrastructure as Code in your repositories. PR-gated, nothing hand-clicked in a console.</p>
                 </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-meta">
-                        <div class="timeline-date">Jul 2021 — Mar 2022</div>
-                        <div class="timeline-company">NatWest Group</div>
-                        <div class="timeline-location">UK (Contract)</div>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>DevOps Consultant</h3>
-                        <ul>
-                            <li>Provided DevOps consulting within a regulated banking environment</li>
-                            <li>Led Docker-based containerization of legacy applications</li>
-                            <li>Designed compliant CI/CD frameworks aligned with enterprise governance</li>
-                            <li>Authored operational playbooks and audit-ready deployment documentation</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span class="timeline-tag">Docker</span>
-                            <span class="timeline-tag">CI/CD</span>
-                            <span class="timeline-tag">Banking</span>
-                            <span class="timeline-tag">Compliance</span>
-                        </div>
-                    </div>
+                <div class="process-step reveal">
+                    <span class="step-n">STEP 04</span>
+                    <h3>Handover</h3>
+                    <p>Runbooks, architecture docs and a walkthrough with your team. You keep the code and the knowledge. No lock-in.</p>
                 </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-meta">
-                        <div class="timeline-date">Aug 2016 — Aug 2021</div>
-                        <div class="timeline-company">Wipro</div>
-                        <div class="timeline-location">India</div>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>DevOps Architect</h3>
-                        <ul>
-                            <li>Progressed from Infrastructure Engineer to DevOps Architect role</li>
-                            <li>Built scalable AWS environments using Terraform modules (EC2, VPC, RDS)</li>
-                            <li>Developed reusable Infrastructure as Code frameworks for multi-environment deployments</li>
-                            <li>Designed standardized CI/CD architectures for enterprise clients</li>
-                            <li>Implemented high-availability and zero-downtime deployment strategies</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span class="timeline-tag">AWS</span>
-                            <span class="timeline-tag">Terraform</span>
-                            <span class="timeline-tag">Linux</span>
-                            <span class="timeline-tag">CI/CD</span>
-                            <span class="timeline-tag">Enterprise</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+            <p class="process-note reveal">Remote-first · comfortable across IST, GMT and US time zones</p>
         </div>
     </section>
 
-    <!-- ═══════════════════ CERTIFICATIONS ═══════════════════ -->
     <section id="certifications" class="section-reveal">
         <div class="container">
-            <div class="section-label reveal">Certifications</div>
+            <div class="section-label reveal">Credentials</div>
+            <p class="cred-lead reveal">
+                <strong>9+ years</strong> building and running infrastructure for fintech startups, global
+                banking institutions and enterprise tech. <strong>M.Tech, BITS Pilani.</strong>
+                Certifications kept current, because in regulated environments someone always asks.
+            </p>
             <div class="certs-grid">
                 <div class="cert-card reveal-stagger" style="--cert-color: #326CE5; --cert-rgb: 50,108,229;">
                     <div class="cert-icon">
@@ -1544,23 +1577,7 @@
     </section>
 
     <!-- ═══════════════════ EDUCATION ═══════════════════ -->
-    <section id="education" class="section-reveal">
-        <div class="container">
-            <div class="section-label reveal">Education</div>
-            <div class="edu-grid">
-                <div class="edu-card reveal">
-                    <h4>M.Tech — Computer Science</h4>
-                    <div class="edu-school">Birla Institute of Technology and Science (BITS), Pilani</div>
-                    <div class="edu-year">2020</div>
-                </div>
-                <div class="edu-card reveal">
-                    <h4>Bachelor of Computer Applications (BCA)</h4>
-                    <div class="edu-school">M.S. Ramaiah College, Bangalore University</div>
-                    <div class="edu-year">2016</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- ═══════════════════ CONTACT ═══════════════════ -->
     <section id="contact" class="section-reveal">
@@ -1570,9 +1587,7 @@
                 <div class="contact-info reveal">
                     <h3>Let's build something<br>great together.</h3>
                     <p>
-                        Whether you need a cloud platform architect, want to optimize your
-                        infrastructure costs, or need help setting up a reliable CI/CD pipeline —
-                        I'm happy to chat.
+                        Tell me what you are running and what is hurting. If I am not the right fit I will say so, and point you at someone who is. Rates depend on scope — let's talk.
                     </p>
                     <div class="contact-links">
                         <a href="mailto:rameshadityap@gmail.com" class="contact-link">
