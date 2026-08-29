@@ -1154,7 +1154,9 @@
         .service-card { padding: 40px 36px; border: 1px solid var(--border); border-radius: 20px;
             background: var(--bg-card); position: relative; overflow: hidden; display: flex; flex-direction: column;
             transition: border-color .4s ease, transform .45s var(--ease-out), background .3s ease; }
-        .service-card:hover { border-color: var(--card-accent-border, var(--border-hover)); background: var(--bg-card-hover); transform: translateY(-4px); }
+        .service-card:hover { border-color: var(--card-accent-border, var(--border-hover)); background: var(--bg-card-hover);
+            transform: translateY(-4px); box-shadow: 0 20px 44px -24px var(--card-accent-border, transparent); }
+        .service-card:hover .service-icon { background: var(--card-accent-border, rgba(255,255,255,.10)); }
         .service-num { position: absolute; top: 28px; right: 32px; font-family: var(--font-mono);
             font-size: 13px; color: var(--text-tertiary); letter-spacing: 1px; }
         .service-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
@@ -1281,11 +1283,11 @@
         <div class="container">
             <div class="section-label reveal">Services</div>
             <p class="services-lead reveal">
-                Six things teams usually bring me in for. Every engagement ends the same way:
+                Eight things teams usually bring me in for. Every engagement ends the same way:
                 working infrastructure, documented, handed over as code in your own repositories.
             </p>
             <div class="services-grid">
-                    <div class="service-card reveal accent-blue">
+                    <div class="service-card reveal" style="--card-accent: rgba(125,211,252,.10); --card-accent-border: rgba(125,211,252,.32); --card-accent-solid: #7dd3fc;">
                         <span class="service-num">01</span>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
                         <h3 class="service-title">Production EKS Platform</h3>
@@ -1298,7 +1300,7 @@
                         </ul>
                         <div class="service-proof">→ 99.9% uptime · zero-downtime deploys</div>
                     </div>
-                    <div class="service-card reveal accent-green">
+                    <div class="service-card reveal" style="--card-accent: rgba(134,239,172,.10); --card-accent-border: rgba(134,239,172,.32); --card-accent-solid: #86efac;">
                         <span class="service-num">02</span>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
                         <h3 class="service-title">Cloud Cost Reduction</h3>
@@ -1311,7 +1313,7 @@
                         </ul>
                         <div class="service-proof">→ ~25% cloud spend removed</div>
                     </div>
-                    <div class="service-card reveal accent-purple">
+                    <div class="service-card reveal" style="--card-accent: rgba(196,181,253,.10); --card-accent-border: rgba(196,181,253,.32); --card-accent-solid: #c4b5fd;">
                         <span class="service-num">03</span>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
                         <h3 class="service-title">CI/CD &amp; GitOps Delivery</h3>
@@ -1324,7 +1326,7 @@
                         </ul>
                         <div class="service-proof">→ 10x faster releases · 30–40% fewer failures</div>
                     </div>
-                    <div class="service-card reveal accent-amber">
+                    <div class="service-card reveal" style="--card-accent: rgba(252,211,77,.10); --card-accent-border: rgba(252,211,77,.32); --card-accent-solid: #fcd34d;">
                         <span class="service-num">04</span>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
                         <h3 class="service-title">ClickOps → Infrastructure as Code</h3>
@@ -1337,7 +1339,7 @@
                         </ul>
                         <div class="service-proof">→ 50%+ less manual ops</div>
                     </div>
-                    <div class="service-card reveal accent-blue">
+                    <div class="service-card reveal" style="--card-accent: rgba(103,232,249,.10); --card-accent-border: rgba(103,232,249,.32); --card-accent-solid: #67e8f9;">
                         <span class="service-num">05</span>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
                         <h3 class="service-title">Observability &amp; Incident Readiness</h3>
@@ -1350,7 +1352,7 @@
                         </ul>
                         <div class="service-proof">→ 25–35% faster incident resolution</div>
                     </div>
-                    <div class="service-card reveal accent-green">
+                    <div class="service-card reveal" style="--card-accent: rgba(252,165,165,.10); --card-accent-border: rgba(252,165,165,.32); --card-accent-solid: #fca5a5;">
                         <span class="service-num">06</span>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
                         <h3 class="service-title">Security &amp; Compliance Hardening</h3>
@@ -1362,6 +1364,32 @@
                             <li>RBAC, NetworkPolicy and TLS everywhere</li>
                         </ul>
                         <div class="service-proof">→ 100% compliance across regulated infra</div>
+                    </div>
+                    <div class="service-card reveal" style="--card-accent: rgba(165,180,252,.10); --card-accent-border: rgba(165,180,252,.32); --card-accent-solid: #a5b4fc;">
+                        <span class="service-num">07</span>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
+                        <h3 class="service-title">GPU &amp; AI Workloads on Kubernetes</h3>
+                        <p class="service-desc">Running models is an infrastructure problem before it is a model problem. GPUs are the most expensive thing on your bill — they should not sit idle.</p>
+                        <ul class="service-list">
+                            <li>GPU node pools provisioned by Karpenter</li>
+                            <li>Spot-first GPU capacity with graceful fallback</li>
+                            <li>Scale-to-zero between inference bursts</li>
+                            <li>Time-slicing and MIG for shared GPUs</li>
+                        </ul>
+                        <div class="service-proof">→ scale-to-zero GPUs · spot-first provisioning</div>
+                    </div>
+                    <div class="service-card reveal" style="--card-accent: rgba(253,186,116,.10); --card-accent-border: rgba(253,186,116,.32); --card-accent-solid: #fdba74;">
+                        <span class="service-num">08</span>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3v1a3 3 0 0 0 0 6v1a3 3 0 0 0 3 3 3 3 0 0 0 6 0 3 3 0 0 0 3-3v-1a3 3 0 0 0 0-6V9a3 3 0 0 0-3-3V5a3 3 0 0 0-3-3z"/><line x1="12" y1="2" x2="12" y2="22"/></svg></div>
+                        <h3 class="service-title">LLM Platform &amp; MLOps</h3>
+                        <p class="service-desc">A private, production path for models — serving, retrieval and evaluation, all inside your own AWS account.</p>
+                        <ul class="service-list">
+                            <li>Model serving on vLLM, KServe or Bedrock</li>
+                            <li>RAG and vector database infrastructure</li>
+                            <li>Versioned deploys with rollback, same as any service</li>
+                            <li>Token cost, latency and drift on a dashboard</li>
+                        </ul>
+                        <div class="service-proof">→ runs in your VPC · no data leaves your account</div>
                     </div>
             </div>
         </div>
